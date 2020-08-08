@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public class MealServlet extends HttpServlet {
@@ -53,6 +51,12 @@ public class MealServlet extends HttpServlet {
                 int id = getId(request);
                 log.info("Delete {}", id);
                 repository.delete(id);
+                response.sendRedirect("meals");
+                break;
+            case "vote":
+                int mealId = getId(request);
+                log.info("Vote {}", mealId);
+                repository.vote(mealId);
                 response.sendRedirect("meals");
                 break;
             case "create":

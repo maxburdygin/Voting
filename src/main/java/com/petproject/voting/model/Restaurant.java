@@ -1,9 +1,10 @@
 package com.petproject.voting.model;
 
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Restaurant extends AbstractNamedEntity {
-    private int votes;
+    private AtomicInteger votes = new AtomicInteger(0);
 
     private Set<Meal> meals;
 
@@ -26,11 +27,11 @@ public class Restaurant extends AbstractNamedEntity {
     }
 
     public int getVotes() {
-        return votes;
+        return votes.get();
     }
 
-    public void setVotes(int votes) {
-        this.votes = votes;
+    public int addVote() {
+        return votes.incrementAndGet();
     }
 
     public Set<Meal> getMeals() {

@@ -12,6 +12,9 @@ public interface MealRepository {
     // false if not found
     boolean delete(int id);
 
+    // 0 if not found
+    int vote(int mealId);
+
     // null if not found
     Meal get(int id);
 

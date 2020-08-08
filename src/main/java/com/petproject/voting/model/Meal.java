@@ -1,11 +1,24 @@
 package com.petproject.voting.model;
 
 import java.time.LocalDate;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Meal extends AbstractNamedEntity {
     private int restaurantId;
     private Double price;
+
+    public AtomicInteger getVotes() {
+        return votes;
+    }
+
     private LocalDate localDate;
+    private Restaurant restaurant;
+    private AtomicInteger votes = new AtomicInteger(0);
+
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
 
     public Meal(int id, String name, int restaurantId, Double price, LocalDate localDate) {
         super(id, name);
@@ -54,6 +67,10 @@ public class Meal extends AbstractNamedEntity {
 
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
+    }
+
+    public int addVote() {
+        return this.votes.incrementAndGet();
     }
 
 }

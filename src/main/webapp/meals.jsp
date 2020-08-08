@@ -29,6 +29,8 @@
             <th>Restaurant</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Votes</th>
+            <th></th>
             <th></th>
             <th></th>
         </tr>
@@ -45,8 +47,10 @@
                 <td>${meal.restaurantId}</td>
                 <td>${meal.name}</td>
                 <td>${meal.price}</td>
+                <td>${meal.votes}</td>
                 <td><a href="meals?action=update&id=${meal.id}">Update</a></td>
                 <td><a href="meals?action=delete&id=${meal.id}">Delete</a></td>
+                <td><a href="meals?action=vote&id=${meal.id}">Vote</a></td>
             </tr>
         </c:forEach>
     </table>
