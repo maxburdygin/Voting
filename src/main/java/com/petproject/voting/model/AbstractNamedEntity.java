@@ -30,6 +30,6 @@ public abstract class AbstractNamedEntity {
     }
 
     public boolean isNew() {
-        return id==0;
+        return id == 0;
     }
 }

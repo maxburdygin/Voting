@@ -1,12 +1,13 @@
 package com.petproject.voting.model;
 
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Restaurant extends AbstractNamedEntity {
     private AtomicInteger votes = new AtomicInteger(0);
 
-    private Set<Meal> meals;
+    private List<Meal> meals;
 
     public Restaurant(int id, String name) {
         super(id, name);
@@ -14,6 +15,22 @@ public class Restaurant extends AbstractNamedEntity {
 
     public Restaurant(String name) {
         super(name);
+    }
+
+    public int getVotes() {
+        return votes.get();
+    }
+
+    public int addVote() {
+        return votes.incrementAndGet();
+    }
+
+    public List<Meal> getMeals() {
+        return meals;
+    }
+
+    public void setMeals(List<Meal> meals) {
+        this.meals = meals;
     }
 
     @Override
@@ -25,21 +42,4 @@ public class Restaurant extends AbstractNamedEntity {
                 ", meals=" + meals +*/
                 '}';
     }
-
-    public int getVotes() {
-        return votes.get();
-    }
-
-    public int addVote() {
-        return votes.incrementAndGet();
-    }
-
-    public Set<Meal> getMeals() {
-        return meals;
-    }
-
-    public void setMeals(Set<Meal> meals) {
-        this.meals = meals;
-    }
-
 }
