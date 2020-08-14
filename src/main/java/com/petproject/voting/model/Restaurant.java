@@ -1,45 +1,49 @@
 package com.petproject.voting.model;
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Entity
+@Table(name = "restaurants", uniqueConstraints = {@UniqueConstraint(columnNames = "name", name = "restaurants_unique_name_idx")})
 public class Restaurant extends AbstractNamedEntity {
-    private AtomicInteger votes = new AtomicInteger(0);
 
+    @Column(name = "votes", nullable = false)
+    private int votes;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    @OrderBy("localDate DESC")
     private List<Meal> meals;
 
-    public Restaurant(int id, String name) {
-        super(id, name);
+    public Restaurant() {
     }
 
-    public Restaurant(String name) {
-        super(name);
+    public Restaurant(Integer id, String name, int votes) {
+        super(id, name);
+        this.votes = votes;
     }
 
     public int getVotes() {
-        return votes.get();
+        return votes;
     }
 
-    public int addVote() {
-        return votes.incrementAndGet();
+    public void setVotes(int votes) {
+        this.votes = votes;
     }
 
     public List<Meal> getMeals() {
         return meals;
     }
 
-    public void setMeals(List<Meal> meals) {
-        this.meals = meals;
-    }
-
     @Override
     public String toString() {
         return "Restaurant{" +
-                "name=" + name +
-/*                "id=" + id +
-                "votes=" + votes +
-                ", meals=" + meals +*/
-                '}';
+                "id=" + id +
+                ", name='" + name +
+                ", votes=" + votes +
+                '}' + "\n";
     }
 }

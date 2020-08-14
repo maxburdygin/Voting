@@ -3,20 +3,27 @@ package com.petproject.voting.repository;
 
 import com.petproject.voting.model.Meal;
 
-import java.util.Collection;
+import java.time.LocalDate;
+import java.util.List;
 
 public interface MealRepository {
-    // null if not found, when updated
-    Meal save(Meal meal);
+    // null if updated meal do not belong to restaurantId
+    Meal save(Meal meal, int restaurantId);
 
-    // false if not found
+    // false if meal do not belong to restaurantId
     boolean delete(int id);
 
-    // 0 if not found
-    int vote(int mealId);
-
-    // null if not found
+    // null if meal do not belong to restaurantId
     Meal get(int id);
 
-    Collection<Meal> getAll();
+    // ORDERED dateTime and restaurant desc
+    List<Meal> getAll();
+
+    // ORDERED dateTime desc
+    List<Meal> getAllByRestaurantId(int restaurantId);
+
+    // ORDERED restaurant desc
+    List<Meal> getAllForToday();
+
+    List<Meal> getAllByRestaurantIdForToday(int restaurantId);
 }

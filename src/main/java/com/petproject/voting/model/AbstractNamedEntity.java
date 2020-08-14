@@ -1,35 +1,36 @@
 package com.petproject.voting.model;
 
-public abstract class AbstractNamedEntity {
-    protected int id;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@MappedSuperclass
+public abstract class AbstractNamedEntity extends AbstractBaseEntity {
+
+    @NotBlank
+    @Size(min = 2, max = 100)
+    @Column(name = "name", nullable = false)
     protected String name;
 
-    public AbstractNamedEntity(int id, String name) {
-        this.id = id;
+    protected AbstractNamedEntity() {
+    }
+
+    protected AbstractNamedEntity(Integer id, String name) {
+        super(id);
         this.name = name;
-    }
-
-    public AbstractNamedEntity(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public boolean isNew() {
-        return id == 0;
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + '(' + name + ')';
     }
 }

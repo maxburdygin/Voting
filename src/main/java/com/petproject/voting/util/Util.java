@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Util {
-    public static final List<Meal> MEALS = Arrays.asList(
+    /*public static final List<Meal> MEALS = Arrays.asList(
             new Meal("Happy meal", 1, 150D, LocalDate.of(2020, 07, 22)),
             new Meal("UnHappy Meal", 1, 1500D, LocalDate.of(2020, 07, 22)),
             new Meal("Chicken set #1", 2, 320D, LocalDate.of(2020, 07, 22)),
@@ -23,5 +23,5 @@ public class Util {
             new Restaurant(1,"McDonald's"),
             new Restaurant(2,"Kentucky Fried Chicken"),
             new Restaurant(3,"Pizza Hut")
-    );
+    );*/
 }
