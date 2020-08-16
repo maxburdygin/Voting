@@ -36,4 +36,9 @@ public class DataJpaRestaurantRepository implements RestaurantRepository {
         return crudRestaurantRepository.getAll();
     }
 
+    @Override
+    public Restaurant getByName(String name) {
+        return crudRestaurantRepository.getByName(name);
+    }
+
 }

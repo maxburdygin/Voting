@@ -22,4 +22,5 @@ public interface CrudRestaurantRepository extends JpaRepository<Restaurant, Inte
     @Query("SELECT r FROM Restaurant r ORDER BY r.name ASC")
     List<Restaurant> getAll();
 
+    Restaurant getByName(String name);
 }
