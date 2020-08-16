@@ -1,13 +1,9 @@
-package com.petproject.voting.repository.restaurant;
+package com.petproject.voting.repository;
 
-import com.petproject.voting.model.Meal;
 import com.petproject.voting.model.Restaurant;
-import com.petproject.voting.repository.RestaurantRepository;
-import com.petproject.voting.repository.restaurant.CrudRestaurantRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Repository

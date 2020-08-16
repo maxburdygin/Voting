@@ -8,6 +8,7 @@ import com.petproject.voting.repository.MealRepository;
 import com.petproject.voting.repository.RestaurantRepository;
 import com.petproject.voting.repository.UserRepository;
 import com.petproject.voting.service.UserService;
+import com.petproject.voting.web.MealRestController;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -68,7 +69,7 @@ public class SpringMain {
         userRepository.delete(100001);
         userRepository.getAll().forEach(u -> System.out.println(u.toString()));*/
 
-        UserService userRepository = (UserService) appCtx.getBean("userService");
+        /*UserService userRepository = (UserService) appCtx.getBean("userService");
         userRepository.getAll().forEach((m) -> System.out.println(m.toString()));
         System.out.println("+++++++++++++++");
         System.out.println(userRepository.get(100000).toString());
@@ -77,7 +78,10 @@ public class SpringMain {
         userRepository.update(user);
         System.out.println("+++++++++++++++");
         userRepository.delete(100001);
-        userRepository.getAll().forEach(u -> System.out.println(u.toString()));
+        userRepository.getAll().forEach(u -> System.out.println(u.toString()));*/
+
+        MealRestController controller = (MealRestController) appCtx.getBean("mealRestController");
+        controller.getAll().forEach((m) -> System.out.println(m.toString()));
 
         appCtx.close();
     }

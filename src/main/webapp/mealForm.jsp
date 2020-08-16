@@ -32,12 +32,8 @@
     <form method="post" action="meals">
         <input type="hidden" name="id" value="${meal.id}">
         <dl>
-            <dt>Name:</dt>
-            <dd><input type="text" value="${meal.name}" size=40 name="name" required></dd>
-        </dl>
-        <dl>
-            <dt>Restaurant Id:</dt>
-            <dd><input type="number" value="${meal.restaurantId}" name="restaurantId" required></dd>
+            <dt>Description:</dt>
+            <dd><input type="text" value="${meal.description}" size=40 name="description" required></dd>
         </dl>
         <dl>
             <dt>Price:</dt>
@@ -47,7 +43,10 @@
             <dt>Date:</dt>
             <dd><input type="datetime-local" value="${meal.localDate}" name="localDate" required></dd>
         </dl>
-
+        <dl>
+            <dt>Restaurant Id:</dt>
+            <dd><input type="number" value="${meal.restaurant.id()}" name="restaurantId" required></dd>
+        </dl>
         <button type="submit">Save</button>
         <button onclick="window.history.back()" type="button">Cancel</button>
     </form>

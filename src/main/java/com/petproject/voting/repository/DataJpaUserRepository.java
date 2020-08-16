@@ -1,6 +1,7 @@
-package com.petproject.voting.repository.user;
+package com.petproject.voting.repository;
 
 import com.petproject.voting.model.User;
+import com.petproject.voting.repository.CrudUserRepository;
 import com.petproject.voting.repository.UserRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;

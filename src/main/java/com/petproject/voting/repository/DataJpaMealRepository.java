@@ -1,9 +1,6 @@
-package com.petproject.voting.repository.meal;
+package com.petproject.voting.repository;
 
 import com.petproject.voting.model.Meal;
-import com.petproject.voting.repository.MealRepository;
-import com.petproject.voting.repository.meal.CrudMealRepository;
-import com.petproject.voting.repository.restaurant.CrudRestaurantRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

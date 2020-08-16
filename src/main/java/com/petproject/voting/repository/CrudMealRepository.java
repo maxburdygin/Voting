@@ -1,4 +1,4 @@
-package com.petproject.voting.repository.meal;
+package com.petproject.voting.repository;
 
 import com.petproject.voting.model.Meal;
 import org.springframework.data.jpa.repository.JpaRepository;

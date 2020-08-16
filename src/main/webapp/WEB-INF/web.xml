@@ -6,7 +6,19 @@
 
     <display-name>Voting</display-name>
 
-    <servlet>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:spring/spring-app.xml
+            classpath:spring/spring-db.xml
+        </param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+<!--    <servlet>
         <servlet-name>userServlet</servlet-name>
         <servlet-class>com.petproject.voting.web.UserServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
@@ -14,7 +26,7 @@
     <servlet-mapping>
         <servlet-name>userServlet</servlet-name>
         <url-pattern>/users</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <servlet>
         <servlet-name>mealServlet</servlet-name>

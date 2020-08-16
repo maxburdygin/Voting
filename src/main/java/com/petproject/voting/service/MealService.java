@@ -14,26 +14,22 @@ import static com.petproject.voting.util.ValidationUtil.checkNotFoundWithId;
 @Service
 public class MealService {
 
-    /*private final MealRepository repository;
+    private final MealRepository repository;
 
     public MealService(MealRepository repository) {
         this.repository = repository;
     }
 
-    public Meal get(int id, int restaurantId) {
-        return checkNotFoundWithId(repository.get(id, restaurantId), id);
+    public Meal get(int id) {
+        return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public void delete(int id, int restaurantId) {
-        checkNotFoundWithId(repository.delete(id, restaurantId), id);
+    public void delete(int id) {
+        checkNotFoundWithId(repository.delete(id), id);
     }
 
-*//*    public List<Meal> getBetweenInclusive(@Nullable LocalDate startDate, @Nullable LocalDate endDate, int userId) {
-        return repository.getBetweenHalfOpen(atStartOfDayOrMin(startDate), atStartOfNextDayOrMax(endDate), userId);
-    }*//*
-
-    public List<Meal> getAll(int restaurantId) {
-        return repository.getAll(restaurantId);
+    public List<Meal> getAll() {
+        return repository.getAll();
     }
 
     public void update(Meal meal, int restaurantId) {
@@ -45,8 +41,4 @@ public class MealService {
         Assert.notNull(meal, "meal must not be null");
         return repository.save(meal, restaurantId);
     }
-
-    *//*public Meal getWithRestaurant(int id, int restaurantId) {
-        return checkNotFoundWithId(repository.getWithRestaurant(id, restaurantId), id);
-    }*/
 }

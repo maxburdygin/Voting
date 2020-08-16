@@ -1,4 +1,4 @@
-package com.petproject.voting.repository.restaurant;
+package com.petproject.voting.repository;
 
 import com.petproject.voting.model.Meal;
 import com.petproject.voting.model.Restaurant;
