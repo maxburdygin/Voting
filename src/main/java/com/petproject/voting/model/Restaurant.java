@@ -26,6 +26,10 @@ public class Restaurant extends AbstractNamedEntity {
         this.votes = votes;
     }
 
+    public Restaurant(Restaurant r) {
+        this(r.getId(), r.getName(), r.getVotes());
+    }
+
     public int getVotes() {
         return votes;
     }
@@ -44,6 +48,6 @@ public class Restaurant extends AbstractNamedEntity {
                 "id=" + id +
                 ", name='" + name +
                 ", votes=" + votes +
-                '}' + "\n";
+                '}';
     }
 }

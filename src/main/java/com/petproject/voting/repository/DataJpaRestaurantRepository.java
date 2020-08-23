@@ -35,10 +35,4 @@ public class DataJpaRestaurantRepository implements RestaurantRepository {
     public List<Restaurant> getAll() {
         return crudRestaurantRepository.getAll();
     }
-
-    @Override
-    public Restaurant getByName(String name) {
-        return crudRestaurantRepository.getByName(name);
-    }
-
 }

@@ -18,6 +18,7 @@
             <th>Price</th>
             <th></th>
             <th></th>
+            <%--<th></th>--%>
         </tr>
         </thead>
         <c:forEach items="${meals}" var="meal">
@@ -26,8 +27,9 @@
                 <td>${meal.localDate}</td>
                 <td>${meal.description}</td>
                 <td>${meal.price}</td>
-                <td><a href="meals?action=update&id=${meal.id}">Update</a></td>
-                <td><a href="meals?action=delete&id=${meal.id}">Delete</a></td>
+                <td><a href="meals/update?id=${meal.id}">Update</a></td>
+                <td><a href="meals/delete?id=${meal.id}">Delete</a></td>
+                <%--<td><a href="restaurants?action=vote&id=${meal.restaurantId}">Vote this Restaurant</a></td>--%>
             </tr>
         </c:forEach>
     </table>

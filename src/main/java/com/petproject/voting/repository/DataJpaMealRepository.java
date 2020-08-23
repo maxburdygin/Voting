@@ -43,7 +43,7 @@ public class DataJpaMealRepository implements MealRepository {
 
     @Override
     public List<Meal> getAll() {
-        return crudMealRepository.findAll(SORT_DATE_REST);
+        return crudMealRepository.getAll();
     }
 
     @Override
@@ -52,15 +52,15 @@ public class DataJpaMealRepository implements MealRepository {
     }
 
     @Override
-    public List<Meal> getAllByRestaurantIdForToday(int restaurantId) {
-        LocalDate today = LocalDate.now();
-        return crudMealRepository.getAllByRestaurantIdForToday(restaurantId, today);
+    public List<Meal> getAllByDate(LocalDate localDate) {
+        return crudMealRepository.getAllByLocalDate(localDate);
     }
 
     @Override
-    public List<Meal> getAllForToday() {
-        LocalDate today = LocalDate.now();
-        return crudMealRepository.getAllForToday(today);
+    public List<Meal> getAllByRestaurantIdAndDate(int restaurantId, LocalDate localDate) {
+        return crudMealRepository.getAllByRestaurantIdAndLocalDate(restaurantId, localDate);
     }
+
+
 
 }

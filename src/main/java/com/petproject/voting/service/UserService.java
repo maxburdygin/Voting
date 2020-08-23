@@ -2,8 +2,6 @@ package com.petproject.voting.service;
 
 import com.petproject.voting.model.User;
 import com.petproject.voting.repository.UserRepository;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 

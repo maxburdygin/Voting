@@ -1,6 +1,7 @@
 package com.petproject.voting.web;
 
 import com.petproject.voting.service.MealService;
+import com.petproject.voting.service.RestaurantService;
 import com.petproject.voting.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class RootController {
 
     @Autowired
     private MealService mealService;
+
+    @Autowired
+    private RestaurantService restaurantService;
 
     @GetMapping("/")
     public String root() {
@@ -42,5 +46,12 @@ public class RootController {
         model.addAttribute("meals",
                 mealService.getAll());
         return "meals";
+    }
+
+    @GetMapping("/restaurants")
+    public String getRestaurants(Model model) {
+        model.addAttribute("restaurants",
+                restaurantService.getAll());
+        return "restaurants";
     }
 }

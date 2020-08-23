@@ -23,7 +23,7 @@ public interface MealRepository {
     List<Meal> getAllByRestaurantId(int restaurantId);
 
     // ORDERED restaurant desc
-    List<Meal> getAllForToday();
+    List<Meal> getAllByDate(LocalDate localDate);
 
-    List<Meal> getAllByRestaurantIdForToday(int restaurantId);
+    List<Meal> getAllByRestaurantIdAndDate(int restaurantId, LocalDate localDate);
 }

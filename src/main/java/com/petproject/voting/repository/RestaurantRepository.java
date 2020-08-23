@@ -17,6 +17,4 @@ public interface RestaurantRepository {
 
     // ORDERED name asc
     List<Restaurant> getAll();
-
-    Restaurant getByName(String name);
 }

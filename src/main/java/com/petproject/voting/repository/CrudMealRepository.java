@@ -13,17 +13,18 @@ import java.util.List;
 @Transactional(readOnly = true)
 public interface CrudMealRepository extends JpaRepository<Meal, Integer> {
 
-    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.restaurant.id=:restaurantId ORDER BY m.id ASC")
+    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.restaurant.id=:restaurantId ORDER BY m.localDate DESC")
     List<Meal> getAllByRestaurantId(@Param("restaurantId") int restaurantId);
 
-    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.localDate=:today ORDER BY m.id ASC")
-    List<Meal> getAllForToday(@Param("today") LocalDate today);
 
     @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant ORDER BY m.localDate DESC")
     List<Meal> getAll();
 
-    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.restaurant.id=:restaurantId AND m.localDate=:today ORDER BY m.id ASC")
-    List<Meal> getAllByRestaurantIdForToday(@Param("restaurantId") int restaurantId, @Param("today") LocalDate today);
+    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.restaurant.id=:restaurantId AND m.localDate=:localDate ORDER BY m.id ASC")
+    List<Meal> getAllByRestaurantIdAndLocalDate(@Param("restaurantId") int restaurantId, @Param("localDate") LocalDate localDate);
+
+    @Query("SELECT m FROM Meal m JOIN FETCH m.restaurant WHERE m.localDate=:localDate ORDER BY m.restaurant.id ASC")
+    List<Meal> getAllByLocalDate(@Param("localDate") LocalDate localDate);
 
     @Transactional
     @Modifying

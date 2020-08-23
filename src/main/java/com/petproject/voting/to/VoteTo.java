@@ -1,42 +1,46 @@
 package com.petproject.voting.to;
 
-import com.petproject.voting.model.Meal;
-import com.petproject.voting.model.User;
-
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class VoteTo {
-    private Meal meal;
-    private User user;
-    private LocalDateTime localDateTime;
+    private final Integer id;
 
-    public VoteTo(User user, Meal meal) {
-        this.localDateTime = meal.getLocalDate().atTime(11, 00);
-        this.user = user;
-        this.meal = meal;
+    private final LocalDate localDate;
+
+    private final Integer restaurantId;
+
+    private final Integer userId;
+
+    public VoteTo(Integer id, LocalDate localDate, Integer restaurantId, Integer userId) {
+        this.id = id;
+        this.localDate = localDate;
+        this.restaurantId = restaurantId;
+        this.userId = userId;
     }
 
-    public Meal getMeal() {
-        return meal;
+    public Integer getId() {
+        return id;
     }
 
-    public void setMeal(Meal meal) {
-        this.meal = meal;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
-    }
-
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
+    @Override
+    public String toString() {
+        return "MealTo{" +
+                "id=" + id +
+                ", restaurantId=" + restaurantId +
+                ", localDate=" + localDate +
+                ", userId=" + userId +
+                '}';
     }
 }

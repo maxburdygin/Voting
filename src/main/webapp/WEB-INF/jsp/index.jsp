@@ -10,5 +10,8 @@
         <button type="submit">Select</button>
     </form>
 </section>
+<a href="users">Users</a>
+<a href="meals">Meals</a>
+<a href="restaurants">Restaurants</a>
 </body>
 </html>
