@@ -11,10 +11,10 @@ public interface VoteRepository {
     Vote save(Vote vote, int restaurantId, int userId);
 
     // false if not found
-    boolean delete(int id, int userId);
+    boolean delete(int id);
 
     // null if not found
-    Vote get(int id, int userId);
+    Vote get(int id);
 
     List<Vote> getAll();
 

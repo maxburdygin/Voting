@@ -1,5 +1,6 @@
 package com.petproject.voting.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -12,11 +13,13 @@ import java.time.LocalDate;
         {"user_id", "local_date"}, name = "votes_unique_user_date_idx")})
 public class Vote extends AbstractBaseEntity {
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -76,8 +79,8 @@ public class Vote extends AbstractBaseEntity {
     @Override
     public String toString() {
         return "Vote{" +
+                "id=" + id +
                 ", localDate=" + localDate +
-                ", id=" + id +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.petproject.voting.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Meal extends AbstractBaseEntity {
     @NotNull
     private LocalDate localDate;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id", nullable = false)
     @NotNull
@@ -79,11 +81,11 @@ public class Meal extends AbstractBaseEntity {
 
     @Override
     public String toString() {
-        return "\n" + "Meal{" +
-                "description='" + description + '\'' +
+        return "Meal{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
                 ", price=" + price +
                 ", localDate=" + localDate +
-                ", id=" + id +
                 '}';
     }
 }

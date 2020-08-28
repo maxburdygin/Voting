@@ -30,7 +30,7 @@ public class RestaurantServiceTest extends AbstractServiceTest {
     @Test
     void duplicateNameCreate() throws Exception {
         assertThrows(DataAccessException.class, () ->
-                service.create(new Restaurant(null, "Sushi-Oki", 0)));
+                service.create(new Restaurant(null, "Sushi-Oki")));
     }
 
     @Test
@@ -70,6 +70,6 @@ public class RestaurantServiceTest extends AbstractServiceTest {
 
     @Test
     void createWithException() throws Exception {
-        validateRootCause(() -> service.create(new Restaurant(null, "  ", -3)), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Restaurant(null, "  ")), ConstraintViolationException.class);
     }
 }

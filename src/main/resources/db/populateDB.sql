@@ -14,10 +14,10 @@ VALUES ('USER', 100000),
         ('USER', 100001),
        ('ADMIN', 100001);
 
-INSERT INTO restaurants (name, votes)
-VALUES ('McDonalds', 0),
-       ('KFC', 0),
-       ('Sushi-Oki', 0);
+INSERT INTO restaurants (name)
+VALUES ('McDonalds'),
+       ('KFC'),
+       ('Sushi-Oki');
 
 INSERT INTO meals (description, price, local_date, restaurant_id)
 VALUES ('McD Happy Meal', 150.0, '2020-08-22', 100002),

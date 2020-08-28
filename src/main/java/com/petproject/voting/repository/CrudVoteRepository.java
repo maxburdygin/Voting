@@ -16,8 +16,8 @@ public interface CrudVoteRepository extends JpaRepository<Vote, Integer> {
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Vote v WHERE v.id=:id AND v.user.id=:userId")
-    int delete(@Param("id") int id, @Param("userId") int userId);
+    @Query("DELETE FROM Vote v WHERE v.id=:id")
+    int delete(@Param("id") int id);
 
     @Query("SELECT v FROM Vote v JOIN FETCH v.restaurant WHERE v.localDate=:localDate ORDER BY v.restaurant.id ASC")
     List<Vote> getAllByDate(@Param("localDate") LocalDate localDate);

@@ -17,8 +17,13 @@ public class MealsUtil {
                 .collect(Collectors.toList());
     }
 
-    private static MealTo createTo(Meal meal) {
+    public static MealTo createTo(Meal meal) {
         return new MealTo(meal.getId(), meal.getDescription(), meal.getPrice(),
                 meal.getLocalDate(), meal.getRestaurant().getId(), meal.getRestaurant().getName());
+    }
+
+    public static Meal createFromTo(MealTo mealTo) {
+        return new Meal(mealTo.getId(), mealTo.getDescription(), mealTo.getPrice(),
+                mealTo.getLocalDate());
     }
 }

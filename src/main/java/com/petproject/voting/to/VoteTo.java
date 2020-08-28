@@ -1,15 +1,17 @@
 package com.petproject.voting.to;
 
+import com.petproject.voting.model.Vote;
+
 import java.time.LocalDate;
 
 public class VoteTo {
-    private final Integer id;
+    private Integer id;
 
-    private final LocalDate localDate;
+    private LocalDate localDate;
 
-    private final Integer restaurantId;
+    private Integer restaurantId;
 
-    private final Integer userId;
+    private Integer userId;
 
     public VoteTo(Integer id, LocalDate localDate, Integer restaurantId, Integer userId) {
         this.id = id;
@@ -17,6 +19,16 @@ public class VoteTo {
         this.restaurantId = restaurantId;
         this.userId = userId;
     }
+
+    public VoteTo(LocalDate localDate, Integer restaurantId, Integer userId) {
+        this(null, localDate, restaurantId, userId);
+    }
+
+    public VoteTo(Vote vote, Integer restaurantId, Integer userId) {
+        this(vote.id(), vote.getDate(), restaurantId, userId);
+    }
+
+    public VoteTo(){}
 
     public Integer getId() {
         return id;
@@ -34,12 +46,28 @@ public class VoteTo {
         return userId;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
+    public void setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
-        return "MealTo{" +
+        return "VoteTo{" +
                 "id=" + id +
-                ", restaurantId=" + restaurantId +
                 ", localDate=" + localDate +
+                ", restaurantId=" + restaurantId +
                 ", userId=" + userId +
                 '}';
     }

@@ -30,7 +30,7 @@ public class VoteServiceTest extends AbstractServiceTest {
         Vote newVote = getNewVote();
         newVote.setId(newId);
         VOTE_MATCHER.assertMatch(created, newVote);
-        VOTE_MATCHER.assertMatch(service.get(newId, USER_ID), newVote);
+        VOTE_MATCHER.assertMatch(service.get(newId), newVote);
     }
 
     @Test
@@ -41,24 +41,24 @@ public class VoteServiceTest extends AbstractServiceTest {
 
     @Test
     void delete() throws Exception {
-        service.delete(VOTE1_ID, USER_ID);
-        assertThrows(NotFoundException.class, () -> service.get(VOTE1_ID, USER_ID));
+        service.delete(VOTE1_ID);
+        assertThrows(NotFoundException.class, () -> service.get(VOTE1_ID));
     }
 
     @Test
     void deletedNotFound() throws Exception {
-        assertThrows(NotFoundException.class, () -> service.delete(NOT_FOUND, USER_ID));
+        assertThrows(NotFoundException.class, () -> service.delete(NOT_FOUND));
     }
 
     @Test
     void get() throws Exception {
-        Vote vote = service.get(100017, ADMIN_ID);
+        Vote vote = service.get(100017);
         VOTE_MATCHER.assertMatch(vote, VOTE4);
     }
 
     @Test
     void getNotFound() throws Exception {
-        assertThrows(NotFoundException.class, () -> service.get(NOT_FOUND, USER_ID));
+        assertThrows(NotFoundException.class, () -> service.get(NOT_FOUND));
     }
 
 
@@ -66,7 +66,7 @@ public class VoteServiceTest extends AbstractServiceTest {
     void update() throws Exception {
         Vote updated = getUpdatedVote();
         service.update(updated, KFC_ID, USER_ID);
-        VOTE_MATCHER.assertMatch(service.get(VOTE1_ID, USER_ID), getUpdatedVote());
+        VOTE_MATCHER.assertMatch(service.get(VOTE1_ID), getUpdatedVote());
     }
 
     @Test

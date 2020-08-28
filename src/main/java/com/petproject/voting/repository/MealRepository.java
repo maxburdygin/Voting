@@ -13,7 +13,6 @@ public interface MealRepository {
     // false if meal do not belong to restaurantId
     boolean delete(int id);
 
-    // null if meal do not belong to restaurantId
     Meal get(int id);
 
     // ORDERED dateTime and restaurant desc

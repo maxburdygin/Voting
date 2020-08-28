@@ -30,7 +30,7 @@ public class DataJpaVoteRepository implements VoteRepository {
 
     @Override
     public Vote save(Vote vote, int restaurantId, int userId) {
-        if ((!vote.isNew() && get(vote.id(), userId) == null) ||
+        if ((!vote.isNew() && get(vote.id()) == null) ||
                 crudRestaurantRepository.findById(restaurantId).orElse(null) == null) {
             return null;
         }
@@ -40,15 +40,13 @@ public class DataJpaVoteRepository implements VoteRepository {
     }
 
     @Override
-    public boolean delete(int id, int userId) {
-        return crudRepository.delete(id, userId) != 0;
+    public boolean delete(int id) {
+        return crudRepository.delete(id) != 0;
     }
 
     @Override
-    public Vote get(int id, int userId) {
-        return crudRepository.findById(id)
-                .filter(vote -> vote.getUser().getId() == userId)
-                .orElse(null);
+    public Vote get(int id) {
+        return crudRepository.findById(id).orElse(null);
     }
 
     @Override

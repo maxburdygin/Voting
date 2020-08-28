@@ -68,7 +68,7 @@ class MealServiceTest extends AbstractServiceTest {
 
     @Test
     void getAllByDate() throws Exception {
-        MEAL_MATCHER.assertMatch(service.getAllByDate(LocalDate.now()),
+        MEAL_MATCHER.assertMatch(service.getAllByDate(LocalDate.of(2020, 8, 23)),
                 MEAL2, MEAL5, MEAL8);
     }
 
@@ -80,7 +80,7 @@ class MealServiceTest extends AbstractServiceTest {
 
     @Test
     void getAllByRestaurantIdAndDate() throws Exception {
-        MEAL_MATCHER.assertMatch(service.getAllByRestaurantIdAndDate(100003, LocalDate.now()),
+        MEAL_MATCHER.assertMatch(service.getAllByRestaurantIdAndDate(100003, LocalDate.of(2020, 8, 23)),
                 MEAL5);
     }
 

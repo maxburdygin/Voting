@@ -2,6 +2,8 @@ package com.petproject.voting.service;
 
 import com.petproject.voting.model.Vote;
 import com.petproject.voting.repository.VoteRepository;
+import com.petproject.voting.to.VoteTo;
+import com.petproject.voting.util.VotesUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -18,12 +20,12 @@ public class VoteService {
         this.repository = repository;
     }
 
-    public Vote get(int id, int userId) {
-        return checkNotFoundWithId(repository.get(id, userId), id);
+    public Vote get(int id) {
+        return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public void delete(int id, int userId) {
-        checkNotFoundWithId(repository.delete(id, userId), id);
+    public void delete(int id) {
+        checkNotFoundWithId(repository.delete(id), id);
     }
 
     public List<Vote> getAll() {

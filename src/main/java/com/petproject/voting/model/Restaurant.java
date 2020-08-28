@@ -1,5 +1,6 @@
 package com.petproject.voting.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -11,9 +12,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Table(name = "restaurants", uniqueConstraints = {@UniqueConstraint(columnNames = "name", name = "restaurants_unique_name_idx")})
 public class Restaurant extends AbstractNamedEntity {
 
-    @Column(name = "votes", nullable = false)
-    private int votes;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @OrderBy("localDate DESC")
     private List<Meal> meals;
@@ -21,21 +21,12 @@ public class Restaurant extends AbstractNamedEntity {
     public Restaurant() {
     }
 
-    public Restaurant(Integer id, String name, int votes) {
+    public Restaurant(Integer id, String name) {
         super(id, name);
-        this.votes = votes;
     }
 
     public Restaurant(Restaurant r) {
-        this(r.getId(), r.getName(), r.getVotes());
-    }
-
-    public int getVotes() {
-        return votes;
-    }
-
-    public void setVotes(int votes) {
-        this.votes = votes;
+        this(r.getId(), r.getName());
     }
 
     public List<Meal> getMeals() {
@@ -47,7 +38,6 @@ public class Restaurant extends AbstractNamedEntity {
         return "Restaurant{" +
                 "id=" + id +
                 ", name='" + name +
-                ", votes=" + votes +
                 '}';
     }
 }

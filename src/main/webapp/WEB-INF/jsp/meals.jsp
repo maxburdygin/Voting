@@ -16,20 +16,22 @@
             <th>Date</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Restaurant</th>
             <th></th>
             <th></th>
-            <%--<th></th>--%>
+            <th></th>
         </tr>
         </thead>
         <c:forEach items="${meals}" var="meal">
-            <jsp:useBean id="meal" type="com.petproject.voting.model.Meal"/>
+            <jsp:useBean id="meal" type="com.petproject.voting.to.MealTo"/>
             <tr class="${'excess'}">
                 <td>${meal.localDate}</td>
                 <td>${meal.description}</td>
                 <td>${meal.price}</td>
+                <td>${meal.restaurantName}</td>
                 <td><a href="meals/update?id=${meal.id}">Update</a></td>
                 <td><a href="meals/delete?id=${meal.id}">Delete</a></td>
-                <%--<td><a href="restaurants?action=vote&id=${meal.restaurantId}">Vote this Restaurant</a></td>--%>
+                <td><a href="votes/create=${meal.restaurantId}">Vote this Restaurant</a></td>
             </tr>
         </c:forEach>
     </table>

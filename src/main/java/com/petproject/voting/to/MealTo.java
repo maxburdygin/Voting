@@ -1,21 +1,23 @@
 package com.petproject.voting.to;
 
+import com.petproject.voting.model.Meal;
+
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class MealTo {
-    private final Integer id;
+    private Integer id;
 
-    private final String description;
+    private String description;
 
-    private final Double price;
+    private Double price;
 
-    private final LocalDate localDate;
+    private LocalDate localDate;
 
-    private final Integer restaurantId;
+    private Integer restaurantId;
 
-    private final String restaurantName;
+    private String restaurantName;
 
     public MealTo(Integer id, String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
         this.id = id;
@@ -25,6 +27,16 @@ public class MealTo {
         this.restaurantId = restaurantId;
         this.restaurantName = restaurantName;
     }
+
+    public MealTo(String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
+        this(null, description, price, localDate, restaurantId, restaurantName);
+    }
+
+    public MealTo(Meal meal, Integer restaurantId, String restaurantName) {
+        this(meal.getId(), meal.getDescription(), meal.getPrice(), meal.getLocalDate(), restaurantId, restaurantName);
+    }
+
+    public MealTo(){}
 
     public Integer getId() {
         return id;
@@ -48,6 +60,30 @@ public class MealTo {
 
     public String getRestaurantName() {
         return restaurantName;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
+    public void setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
     }
 
     @Override

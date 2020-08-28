@@ -3,6 +3,8 @@ package com.petproject.voting.web;
 import com.petproject.voting.service.MealService;
 import com.petproject.voting.service.RestaurantService;
 import com.petproject.voting.service.UserService;
+import com.petproject.voting.service.VoteService;
+import com.petproject.voting.util.MealsUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,32 +25,35 @@ public class RootController {
     @Autowired
     private RestaurantService restaurantService;
 
+    @Autowired
+    private VoteService voteService;
+
     @GetMapping("/")
     public String root() {
         return "index";
     }
 
-    @GetMapping("/users")
+    @GetMapping("/vovo/users")
     public String getUsers(Model model) {
         model.addAttribute("users", userService.getAll());
         return "users";
     }
 
-    @PostMapping("/users")
+    @PostMapping("/vovo/users")
     public String setUser(HttpServletRequest request) {
         int userId = Integer.parseInt(request.getParameter("userId"));
         //SecurityUtil.setAuthUserId(userId);
         return "redirect:meals";
     }
 
-    @GetMapping("/meals")
+    @GetMapping("/vovo/meals")
     public String getMeals(Model model) {
         model.addAttribute("meals",
-                mealService.getAll());
+                MealsUtil.getTos(mealService.getAll()));
         return "meals";
     }
 
-    @GetMapping("/restaurants")
+    @GetMapping("/vovo/restaurants")
     public String getRestaurants(Model model) {
         model.addAttribute("restaurants",
                 restaurantService.getAll());

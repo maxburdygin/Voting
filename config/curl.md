@@ -1,0 +1,167 @@
+### curl samples (application deployed at application context `voting`).
+> For windows use `Git Bash`
+
+### Curl samples for Users 
+
+#### get All Users
+`curl --location --request GET http://localhost:8080/voting/users`
+
+#### get User 100001
+`curl --location --request GET http://localhost:8080/voting/users/100001`
+
+#### get User by email        
+`curl --location --request GET 'http://localhost:8080/voting/users/by?email=user@yandex.ru'`
+    
+#### create new User    
+`curl --location --request POST 'http://localhost:8080/voting/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "name": "Vasya",
+        "email": "vasya@yandex.ru",
+        "password": "password",
+        "roles": [
+            "USER"
+        ]
+    }'`
+
+#### update User 100001
+`curl --location --request PUT 'http://localhost:8080/voting/users/100001' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "id": 100001,
+        "name": "blabla",
+        "email": "blablabla@yandex.ru",
+        "password": "password",
+        "roles": [
+            "USER"
+        ],
+        "registered": 1598502240249
+    }'`
+
+#### delete User 100001
+`curl --location --request DELETE http://localhost:8080/voting/users/100001`
+
+
+
+### Curl samples for Restaurants 
+
+#### get All Restaurants
+`curl --location --request GET 'http://localhost:8080/voting/restaurants'`
+
+#### get Restaurant 100002
+`curl --location --request GET 'http://localhost:8080/voting/restaurants/100002'`
+  
+#### create new Restaurant    
+`curl --location --request POST 'http://localhost:8080/voting/restaurants' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "name": "The Best Restaurant Ever"
+     }'`
+
+#### update Restaurant 100003
+`curl --location --request PUT 'http://localhost:8080/voting/restaurants/100003' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "id": 100003,
+         "name": "KFC'\''s not good for you"
+     }'`
+
+#### delete Restaurant 100002
+`curl --location --request DELETE 'http://localhost:8080/voting/restaurants/100002'`
+
+### Curl samples for Meals 
+
+#### get All Meals
+`curl --location --request GET 'http://localhost:8080/voting/meals'`
+
+#### get Meal 100009
+`curl --location --request GET 'http://localhost:8080/voting/meals/100009'`
+
+#### get Meals by Restaurant ID
+`curl --location --request GET 'http://localhost:8080/voting/meals/byRest?id=100003'`
+
+#### get Meals by Date
+`curl --location --request GET 'http://localhost:8080/voting/meals/byDate?date=2020-08-23'`
+
+#### get Meals by Restaurant ID and Date
+`curl --location --request GET 'http://localhost:8080/voting/meals/by?id=100003&date=2020-08-23'`
+
+#### create Meal
+`curl --location --request POST 'http://localhost:8080/voting/meals' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "description": "McD The Most Expensive Meal",
+         "price": 999.0,
+         "localDate": [
+             2020,
+             8,
+             23
+         ],
+         "restaurantId": 100002,
+         "restaurantName": "McDonalds"
+     }'`
+
+#### update Meal 100013
+`curl --location --request PUT 'http://localhost:8080/voting/meals/100013' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "id": 100013,
+         "description": "Salmon Boke",
+         "price": 330.0,
+         "localDate": [
+             2020,
+             8,
+             24
+         ],
+         "restaurantId": 100004,
+         "restaurantName": "Sushi-Oki"
+     }'`
+
+#### delete Meal 100005
+`curl --location --request DELETE 'http://localhost:8080/voting/meals/100005'`
+
+
+
+### Curl samples for Votes 
+
+#### get All Votes
+`curl --location --request GET 'http://localhost:8080/voting/votes'`
+
+#### get All Votes by Restaurant ID
+`curl --location --request GET 'http://localhost:8080/voting/votes/byRest?id=100003'`
+
+#### get All Votes by User ID
+`curl --location --request GET 'http://localhost:8080/voting/votes/byUser?id=100001'`
+
+#### get All Votes by Date
+`curl --location --request GET 'http://localhost:8080/voting/votes/byDate?date=2020-08-22'`
+
+#### create new Vote
+`curl --location --request POST 'http://localhost:8080/voting/votes' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "localDate": [
+             2020,
+             8,
+             24
+         ],
+         "restaurantId": 100004,
+         "userId": 100001
+     }'`
+    
+#### update Vote 100018 (changed Restaurant ID voted for) 
+`curl --location --request PUT 'http://localhost:8080/voting/votes/100018' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+         "id": 100018,
+         "localDate": [
+             2020,
+             8,
+             23
+         ],
+         "restaurantId": 100004,
+         "userId": 100001
+     }'`
+
+#### delete Vote 100018   
+`curl --location --request DELETE 'http://localhost:8080/voting/votes/100018'`
