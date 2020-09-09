@@ -1,9 +1,7 @@
-package com.petproject.voting.web;
+package com.petproject.voting.web.admin;
 
 import com.petproject.voting.model.Restaurant;
-import com.petproject.voting.model.User;
 import com.petproject.voting.service.RestaurantService;
-import com.petproject.voting.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -23,7 +21,7 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 public class RestaurantRestController {
     private static final Logger log = LoggerFactory.getLogger(RestaurantRestController.class);
 
-    static final String REST_URL = "/restaurants";
+    public static final String REST_URL = "/admin/restaurants";
     private final RestaurantService service;
 
     public RestaurantRestController(RestaurantService service) {

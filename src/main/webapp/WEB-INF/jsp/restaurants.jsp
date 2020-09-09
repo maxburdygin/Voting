@@ -14,7 +14,6 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Votes</th>
             <th></th>
             <th></th>
         </tr>
@@ -24,7 +23,6 @@
             <tr class="${'excess'}">
                 <td>${restaurant.id}</td>
                 <td>${restaurant.name}</td>
-                <td>${restaurant.votes}</td>
                 <td><a href="users?action=update&id=${restaurant.id}">Update</a></td>
                 <td><a href="users?action=delete&id=${restaurant.id}">Delete</a></td>
             </tr>

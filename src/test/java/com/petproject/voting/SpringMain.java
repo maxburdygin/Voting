@@ -1,23 +1,6 @@
 package com.petproject.voting;
 
-import com.petproject.voting.model.*;
-import com.petproject.voting.repository.MealRepository;
-import com.petproject.voting.repository.RestaurantRepository;
-import com.petproject.voting.repository.UserRepository;
-import com.petproject.voting.service.MealService;
-import com.petproject.voting.service.UserService;
-import com.petproject.voting.service.VoteService;
-import com.petproject.voting.to.MealTo;
-import com.petproject.voting.to.VoteTo;
 import com.petproject.voting.util.MealsUtil;
-import com.petproject.voting.util.VotesUtil;
-import com.petproject.voting.web.MealRestController;
-import com.petproject.voting.web.VoteRestController;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.time.LocalDate;
-import java.util.Arrays;
 
 import static com.petproject.voting.testdata.MealTestData.MEALS;
 

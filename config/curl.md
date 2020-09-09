@@ -4,16 +4,16 @@
 ### Curl samples for Users 
 
 #### get All Users
-`curl --location --request GET http://localhost:8080/voting/users`
+`curl --location --request GET http://localhost:8080/voting/admin/users`
 
 #### get User 100001
-`curl --location --request GET http://localhost:8080/voting/users/100001`
+`curl --location --request GET http://localhost:8080/voting/admin/users/100001`
 
 #### get User by email        
-`curl --location --request GET 'http://localhost:8080/voting/users/by?email=user@yandex.ru'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/users/by?email=user@yandex.ru'`
     
 #### create new User    
-`curl --location --request POST 'http://localhost:8080/voting/users' \
+`curl --location --request POST 'http://localhost:8080/voting/admin/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
         "name": "Vasya",
@@ -25,7 +25,7 @@
     }'`
 
 #### update User 100001
-`curl --location --request PUT 'http://localhost:8080/voting/users/100001' \
+`curl --location --request PUT 'http://localhost:8080/voting/admin/users/100001' \
 --header 'Content-Type: application/json' \
 --data-raw '{
         "id": 100001,
@@ -39,27 +39,27 @@
     }'`
 
 #### delete User 100001
-`curl --location --request DELETE http://localhost:8080/voting/users/100001`
+`curl --location --request DELETE http://localhost:8080/voting/admin/users/100001`
 
 
 
 ### Curl samples for Restaurants 
 
 #### get All Restaurants
-`curl --location --request GET 'http://localhost:8080/voting/restaurants'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/restaurants'`
 
 #### get Restaurant 100002
-`curl --location --request GET 'http://localhost:8080/voting/restaurants/100002'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/restaurants/100002'`
   
 #### create new Restaurant    
-`curl --location --request POST 'http://localhost:8080/voting/restaurants' \
+`curl --location --request POST 'http://localhost:8080/voting/admin/restaurants' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "name": "The Best Restaurant Ever"
      }'`
 
 #### update Restaurant 100003
-`curl --location --request PUT 'http://localhost:8080/voting/restaurants/100003' \
+`curl --location --request PUT 'http://localhost:8080/voting/admin/restaurants/100003' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "id": 100003,
@@ -67,27 +67,27 @@
      }'`
 
 #### delete Restaurant 100002
-`curl --location --request DELETE 'http://localhost:8080/voting/restaurants/100002'`
+`curl --location --request DELETE 'http://localhost:8080/voting/admin/restaurants/100002'`
 
 ### Curl samples for Meals 
 
 #### get All Meals
-`curl --location --request GET 'http://localhost:8080/voting/meals'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/meals'`
 
 #### get Meal 100009
-`curl --location --request GET 'http://localhost:8080/voting/meals/100009'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/meals/100009'`
 
 #### get Meals by Restaurant ID
-`curl --location --request GET 'http://localhost:8080/voting/meals/byRest?id=100003'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/meals/byRest?id=100003'`
 
 #### get Meals by Date
-`curl --location --request GET 'http://localhost:8080/voting/meals/byDate?date=2020-08-23'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/meals/byDate?date=2020-08-23'`
 
 #### get Meals by Restaurant ID and Date
-`curl --location --request GET 'http://localhost:8080/voting/meals/by?id=100003&date=2020-08-23'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/meals/by?id=100003&date=2020-08-23'`
 
 #### create Meal
-`curl --location --request POST 'http://localhost:8080/voting/meals' \
+`curl --location --request POST 'http://localhost:8080/voting/admin/meals' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "description": "McD The Most Expensive Meal",
@@ -102,7 +102,7 @@
      }'`
 
 #### update Meal 100013
-`curl --location --request PUT 'http://localhost:8080/voting/meals/100013' \
+`curl --location --request PUT 'http://localhost:8080/voting/admin/meals/100013' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "id": 100013,
@@ -118,26 +118,26 @@
      }'`
 
 #### delete Meal 100005
-`curl --location --request DELETE 'http://localhost:8080/voting/meals/100005'`
+`curl --location --request DELETE 'http://localhost:8080/voting/admin/meals/100005'`
 
 
 
 ### Curl samples for Votes 
 
 #### get All Votes
-`curl --location --request GET 'http://localhost:8080/voting/votes'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/votes'`
 
 #### get All Votes by Restaurant ID
-`curl --location --request GET 'http://localhost:8080/voting/votes/byRest?id=100003'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/votes/byRest?id=100003'`
 
 #### get All Votes by User ID
-`curl --location --request GET 'http://localhost:8080/voting/votes/byUser?id=100001'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/votes/byUser?id=100001'`
 
 #### get All Votes by Date
-`curl --location --request GET 'http://localhost:8080/voting/votes/byDate?date=2020-08-22'`
+`curl --location --request GET 'http://localhost:8080/voting/admin/votes/byDate?date=2020-08-22'`
 
 #### create new Vote
-`curl --location --request POST 'http://localhost:8080/voting/votes' \
+`curl --location --request POST 'http://localhost:8080/voting/admin/votes' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "localDate": [
@@ -150,7 +150,7 @@
      }'`
     
 #### update Vote 100018 (changed Restaurant ID voted for) 
-`curl --location --request PUT 'http://localhost:8080/voting/votes/100018' \
+`curl --location --request PUT 'http://localhost:8080/voting/admin/votes/100018' \
  --header 'Content-Type: application/json' \
  --data-raw '{
          "id": 100018,
@@ -164,4 +164,4 @@
      }'`
 
 #### delete Vote 100018   
-`curl --location --request DELETE 'http://localhost:8080/voting/votes/100018'`
+`curl --location --request DELETE 'http://localhost:8080/voting/admin/votes/100018'`

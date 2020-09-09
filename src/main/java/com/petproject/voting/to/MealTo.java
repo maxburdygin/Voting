@@ -2,8 +2,6 @@ package com.petproject.voting.to;
 
 import com.petproject.voting.model.Meal;
 
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class MealTo {
@@ -66,24 +64,12 @@ public class MealTo {
         this.id = id;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
     }
 
     public void setRestaurantId(Integer restaurantId) {
         this.restaurantId = restaurantId;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
     }
 
     @Override

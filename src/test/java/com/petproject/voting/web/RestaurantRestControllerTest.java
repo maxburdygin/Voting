@@ -4,6 +4,7 @@ import com.petproject.voting.model.Restaurant;
 import com.petproject.voting.service.RestaurantService;
 import com.petproject.voting.testdata.RestaurantTestData;
 import com.petproject.voting.util.NotFoundException;
+import com.petproject.voting.web.admin.RestaurantRestController;
 import com.petproject.voting.web.json.JsonUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.petproject.voting.web;
+package com.petproject.voting.web.admin;
 
 import com.petproject.voting.model.User;
 import com.petproject.voting.service.UserService;
@@ -7,9 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -23,7 +21,7 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 public class UserRestController {
     private static final Logger log = LoggerFactory.getLogger(UserRestController.class);
 
-    static final String REST_URL = "/users";
+    public static final String REST_URL = "/admin/users";
     private final UserService service;
 
     public UserRestController(UserService service) {

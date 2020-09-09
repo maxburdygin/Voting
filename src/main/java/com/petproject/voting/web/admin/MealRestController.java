@@ -1,4 +1,4 @@
-package com.petproject.voting.web;
+package com.petproject.voting.web.admin;
 
 import com.petproject.voting.model.Meal;
 import com.petproject.voting.service.MealService;
@@ -10,17 +10,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import static com.petproject.voting.util.ValidationUtil.assureIdConsistent;
 import static com.petproject.voting.util.ValidationUtil.checkNew;
@@ -30,7 +25,7 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 public class MealRestController {
     private static final Logger log = LoggerFactory.getLogger(MealRestController.class);
 
-    static final String REST_URL = "/meals";
+    public static final String REST_URL = "/admin/meals";
     private final MealService service;
 
     public MealRestController(MealService service) {
@@ -57,7 +52,6 @@ public class MealRestController {
         log.info("getAll");
         return MealsUtil.getTos(service.getAll());
     }
-
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Meal> create(@RequestBody MealTo mealTo) {

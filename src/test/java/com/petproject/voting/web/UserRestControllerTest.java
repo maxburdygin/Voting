@@ -4,6 +4,7 @@ import com.petproject.voting.model.User;
 import com.petproject.voting.service.UserService;
 import com.petproject.voting.testdata.UserTestData;
 import com.petproject.voting.util.NotFoundException;
+import com.petproject.voting.web.admin.UserRestController;
 import com.petproject.voting.web.json.JsonUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

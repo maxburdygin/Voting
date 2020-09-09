@@ -10,8 +10,8 @@
         <button type="submit">Select</button>
     </form>
 </section>
-<a href="users">Users</a>
-<a href="meals">Meals</a>
-<a href="restaurants">Restaurants</a>
+<a href="vovo/users">Users</a>
+<a href="vovo/meals">Meals</a>
+<a href="vovo/restaurants">Restaurants</a>
 </body>
 </html>

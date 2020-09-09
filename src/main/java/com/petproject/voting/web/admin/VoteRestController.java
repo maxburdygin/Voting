@@ -1,13 +1,8 @@
-package com.petproject.voting.web;
+package com.petproject.voting.web.admin;
 
-import com.petproject.voting.model.Meal;
-import com.petproject.voting.model.User;
 import com.petproject.voting.model.Vote;
-import com.petproject.voting.service.UserService;
 import com.petproject.voting.service.VoteService;
-import com.petproject.voting.to.MealTo;
 import com.petproject.voting.to.VoteTo;
-import com.petproject.voting.util.MealsUtil;
 import com.petproject.voting.util.VotesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +25,7 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 public class VoteRestController {
     private static final Logger log = LoggerFactory.getLogger(VoteRestController.class);
 
-    static final String REST_URL = "/votes";
+    public static final String REST_URL = "/admin/votes";
     private final VoteService service;
 
     public VoteRestController(VoteService service) {
