@@ -4,7 +4,7 @@ import com.petproject.voting.TestMatcher;
 import com.petproject.voting.model.Role;
 import com.petproject.voting.model.User;
 import com.petproject.voting.model.Vote;
-import com.petproject.voting.to.MealTo;
+import com.petproject.voting.to.DishTo;
 import com.petproject.voting.to.VoteTo;
 
 import java.time.LocalDate;

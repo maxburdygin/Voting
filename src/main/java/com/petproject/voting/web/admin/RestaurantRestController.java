@@ -19,9 +19,8 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 @RestController
 @RequestMapping(value = RestaurantRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class RestaurantRestController {
-    private static final Logger log = LoggerFactory.getLogger(RestaurantRestController.class);
-
     public static final String REST_URL = "/admin/restaurants";
+    private static final Logger log = LoggerFactory.getLogger(RestaurantRestController.class);
     private final RestaurantService service;
 
     public RestaurantRestController(RestaurantService service) {

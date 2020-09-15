@@ -34,7 +34,7 @@
     <Resource name="jdbc/voting"
               auth="Container"
               type="javax.sql.DataSource"
-              url="jdbc:hsqldb:mem:topjava"
+              url="jdbc:hsqldb:mem:voting"
               username="sa"
               password=""
               driverClassName="org.hsqldb.jdbcDriver"

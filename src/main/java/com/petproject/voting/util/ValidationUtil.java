@@ -1,7 +1,6 @@
 package com.petproject.voting.util;
 
 import com.petproject.voting.model.AbstractBaseEntity;
-import com.petproject.voting.model.AbstractNamedEntity;
 
 public class ValidationUtil {
     private ValidationUtil() {

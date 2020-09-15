@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>Restaurants Voting</name>
-    <url>http://topjava.herokuapp.com/</url>
+    <url>http://herokuapp.com/</url>
 
     <properties>
         <java.version>14</java.version>

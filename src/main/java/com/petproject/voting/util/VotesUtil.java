@@ -1,8 +1,6 @@
 package com.petproject.voting.util;
 
-import com.petproject.voting.model.Meal;
 import com.petproject.voting.model.Vote;
-import com.petproject.voting.to.MealTo;
 import com.petproject.voting.to.VoteTo;
 
 import java.time.LocalDate;
@@ -13,6 +11,7 @@ import java.util.stream.Collectors;
 public class VotesUtil {
     public VotesUtil() {
     }
+
     public static List<VoteTo> getTos(Collection<Vote> votes) {
         return votes.stream()
                 .map(VotesUtil::createTo)
@@ -26,6 +25,7 @@ public class VotesUtil {
     public static Vote createFromTo(VoteTo voteTo) {
         return new Vote(voteTo.getId(), voteTo.getLocalDate());
     }
+
     public static boolean isVotedToday(VoteTo voteTo) {
         return voteTo.getLocalDate().isEqual(LocalDate.now());
     }

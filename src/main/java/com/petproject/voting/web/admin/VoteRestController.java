@@ -23,9 +23,8 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 @RestController
 @RequestMapping(value = VoteRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class VoteRestController {
-    private static final Logger log = LoggerFactory.getLogger(VoteRestController.class);
-
     public static final String REST_URL = "/admin/votes";
+    private static final Logger log = LoggerFactory.getLogger(VoteRestController.class);
     private final VoteService service;
 
     public VoteRestController(VoteService service) {

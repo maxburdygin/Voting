@@ -9,8 +9,8 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "votes", uniqueConstraints = {@UniqueConstraint(columnNames =
-        {"user_id", "local_date"}, name = "votes_unique_user_date_idx")})
+@Table(name = "vote", uniqueConstraints = {@UniqueConstraint(columnNames =
+        {"user_id", "local_date"}, name = "vote_unique_user_date_idx")})
 public class Vote extends AbstractBaseEntity {
 
     @JsonIgnore
@@ -56,20 +56,20 @@ public class Vote extends AbstractBaseEntity {
         return user;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public LocalDate getDate() {
-        return localDate;
-    }
-
     public void setUser(User user) {
         this.user = user;
     }
 
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public LocalDate getDate() {
+        return localDate;
     }
 
     public void setDate(LocalDate date) {

@@ -19,9 +19,8 @@ import static com.petproject.voting.util.ValidationUtil.checkNew;
 @RestController
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserRestController {
-    private static final Logger log = LoggerFactory.getLogger(UserRestController.class);
-
     public static final String REST_URL = "/admin/users";
+    private static final Logger log = LoggerFactory.getLogger(UserRestController.class);
     private final UserService service;
 
     public UserRestController(UserService service) {

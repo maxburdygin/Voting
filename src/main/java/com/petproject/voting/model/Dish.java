@@ -10,9 +10,9 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "meals", uniqueConstraints = {@UniqueConstraint(columnNames =
-        {"restaurant_id", "description", "local_date"}, name = "meals_unique_restaurant_date_name_idx")})
-public class Meal extends AbstractBaseEntity {
+@Table(name = "dish", uniqueConstraints = {@UniqueConstraint(columnNames =
+        {"restaurant_id", "description", "local_date"}, name = "dish_unique_restaurant_date_name_idx")})
+public class Dish extends AbstractBaseEntity {
 
     @Column(name = "description", nullable = false)
     @NotBlank
@@ -33,17 +33,17 @@ public class Meal extends AbstractBaseEntity {
     @NotNull
     private Restaurant restaurant;
 
-    public Meal() {
+    public Dish() {
     }
 
-    public Meal(Integer id, String description, Double price, LocalDate localDate) {
+    public Dish(Integer id, String description, Double price, LocalDate localDate) {
         super(id);
         this.description = description;
         this.price = price;
         this.localDate = localDate;
     }
 
-    public Meal(String description, Double price, LocalDate localDate) {
+    public Dish(String description, Double price, LocalDate localDate) {
         this(null, description, price, localDate);
     }
 
@@ -81,7 +81,7 @@ public class Meal extends AbstractBaseEntity {
 
     @Override
     public String toString() {
-        return "Meal{" +
+        return "Dish{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", price=" + price +

@@ -1,10 +1,10 @@
 package com.petproject.voting.to;
 
-import com.petproject.voting.model.Meal;
+import com.petproject.voting.model.Dish;
 
 import java.time.LocalDate;
 
-public class MealTo {
+public class DishTo {
     private Integer id;
 
     private String description;
@@ -17,7 +17,7 @@ public class MealTo {
 
     private String restaurantName;
 
-    public MealTo(Integer id, String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
+    public DishTo(Integer id, String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
         this.id = id;
         this.description = description;
         this.price = price;
@@ -26,18 +26,23 @@ public class MealTo {
         this.restaurantName = restaurantName;
     }
 
-    public MealTo(String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
+    public DishTo(String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
         this(null, description, price, localDate, restaurantId, restaurantName);
     }
 
-    public MealTo(Meal meal, Integer restaurantId, String restaurantName) {
-        this(meal.getId(), meal.getDescription(), meal.getPrice(), meal.getLocalDate(), restaurantId, restaurantName);
+    public DishTo(Dish dish, Integer restaurantId, String restaurantName) {
+        this(dish.getId(), dish.getDescription(), dish.getPrice(), dish.getLocalDate(), restaurantId, restaurantName);
     }
 
-    public MealTo(){}
+    public DishTo() {
+    }
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -52,29 +57,25 @@ public class MealTo {
         return localDate;
     }
 
-    public Integer getRestaurantId() {
-        return restaurantId;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
+    }
+
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
     public void setRestaurantId(Integer restaurantId) {
         this.restaurantId = restaurantId;
     }
 
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
     @Override
     public String toString() {
-        return "MealTo{" +
+        return "DishTo{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", price=" + price +
