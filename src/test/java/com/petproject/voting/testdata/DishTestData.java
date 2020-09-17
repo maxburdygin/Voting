@@ -17,15 +17,15 @@ public class DishTestData {
     public static final int NOT_FOUND = 10;
     public static final int DISH1_ID = START_SEQ + 5;
 
-    public static final Dish DISH1 = new Dish(DISH1_ID, "McD Happy Dish", 150.0, LocalDate.of(2020, Month.AUGUST, 22));
-    public static final Dish DISH2 = new Dish(DISH1_ID + 1, "McD UnHappy Dish", 250.0, LocalDate.of(2020, Month.AUGUST, 23));
-    public static final Dish DISH3 = new Dish(DISH1_ID + 2, "McD Tripple HamBurger", 220.0, LocalDate.of(2020, Month.AUGUST, 21));
-    public static final Dish DISH4 = new Dish(DISH1_ID + 3, "KFC Chicken McNuggets", 180.0, LocalDate.of(2020, Month.AUGUST, 22));
-    public static final Dish DISH5 = new Dish(DISH1_ID + 4, "KFC Chicken Bresasts", 190.0, LocalDate.of(2020, Month.AUGUST, 23));
-    public static final Dish DISH6 = new Dish(DISH1_ID + 5, "KFC Chicken Bucket", 390.0, LocalDate.of(2020, Month.AUGUST, 21));
-    public static final Dish DISH7 = new Dish(DISH1_ID + 6, "California Roll", 260.0, LocalDate.of(2020, Month.AUGUST, 22));
-    public static final Dish DISH8 = new Dish(DISH1_ID + 7, "Philadelphia Roll", 270.0, LocalDate.of(2020, Month.AUGUST, 23));
-    public static final Dish DISH9 = new Dish(DISH1_ID + 8, "Salmon Boke", 280.0, LocalDate.of(2020, Month.AUGUST, 21));
+    public static final Dish DISH1 = new Dish(DISH1_ID, "McD Happy Dish", 15000, LocalDate.of(2020, Month.AUGUST, 22));
+    public static final Dish DISH2 = new Dish(DISH1_ID + 1, "McD UnHappy Dish", 25000, LocalDate.of(2020, Month.AUGUST, 23));
+    public static final Dish DISH3 = new Dish(DISH1_ID + 2, "McD Tripple HamBurger", 22000, LocalDate.of(2020, Month.AUGUST, 21));
+    public static final Dish DISH4 = new Dish(DISH1_ID + 3, "KFC Chicken McNuggets", 18000, LocalDate.of(2020, Month.AUGUST, 22));
+    public static final Dish DISH5 = new Dish(DISH1_ID + 4, "KFC Chicken Bresasts", 19000, LocalDate.of(2020, Month.AUGUST, 23));
+    public static final Dish DISH6 = new Dish(DISH1_ID + 5, "KFC Chicken Bucket", 39000, LocalDate.of(2020, Month.AUGUST, 21));
+    public static final Dish DISH7 = new Dish(DISH1_ID + 6, "California Roll", 26000, LocalDate.of(2020, Month.AUGUST, 22));
+    public static final Dish DISH8 = new Dish(DISH1_ID + 7, "Philadelphia Roll", 27000, LocalDate.of(2020, Month.AUGUST, 23));
+    public static final Dish DISH9 = new Dish(DISH1_ID + 8, "Salmon Boke", 28000, LocalDate.of(2020, Month.AUGUST, 21));
 
     public static final DishTo DISH1_TO = new DishTo(DISH1, 100002, "McDonalds");
     public static final DishTo DISH2_TO = new DishTo(DISH2, 100002, "McDonalds");
@@ -41,7 +41,7 @@ public class DishTestData {
     public static  List<DishTo> DISHES_TO = List.of(DISH2_TO, DISH5_TO, DISH8_TO, DISH1_TO, DISH4_TO, DISH7_TO, DISH3_TO, DISH6_TO, DISH9_TO);
 
     public static Dish getNew() {
-        return new Dish(null, "Созданное блюдо", 480.0 , LocalDate.of(2020, Month.AUGUST, 21));
+        return new Dish(null, "Созданное блюдо", 48000 , LocalDate.of(2020, Month.AUGUST, 21));
     }
 
     public static DishTo getNewTo() {
@@ -49,7 +49,7 @@ public class DishTestData {
     }
 
     public static Dish getUpdated() {
-        return new Dish(DISH1_ID,"Обновленный завтрак", 200.0, LocalDate.of(2020, Month.AUGUST, 21));
+        return new Dish(DISH1_ID,"Обновленный завтрак", 20000, LocalDate.of(2020, Month.AUGUST, 21));
     }
 
     public static DishTo getUpdatedTo() {

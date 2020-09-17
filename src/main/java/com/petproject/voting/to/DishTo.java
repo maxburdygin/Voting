@@ -9,7 +9,7 @@ public class DishTo {
 
     private String description;
 
-    private Double price;
+    private Integer price;
 
     private LocalDate localDate;
 
@@ -17,7 +17,7 @@ public class DishTo {
 
     private String restaurantName;
 
-    public DishTo(Integer id, String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
+    public DishTo(Integer id, String description, Integer price, LocalDate localDate, Integer restaurantId, String restaurantName) {
         this.id = id;
         this.description = description;
         this.price = price;
@@ -26,7 +26,7 @@ public class DishTo {
         this.restaurantName = restaurantName;
     }
 
-    public DishTo(String description, Double price, LocalDate localDate, Integer restaurantId, String restaurantName) {
+    public DishTo(String description, Integer price, LocalDate localDate, Integer restaurantId, String restaurantName) {
         this(null, description, price, localDate, restaurantId, restaurantName);
     }
 
@@ -49,7 +49,7 @@ public class DishTo {
         return description;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 

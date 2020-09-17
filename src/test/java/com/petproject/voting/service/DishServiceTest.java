@@ -86,8 +86,8 @@ class DishServiceTest extends AbstractServiceTest {
 
     @Test
     void createWithException() throws Exception {
-        validateRootCause(() -> service.create(new Dish(null, "", 100.0, LocalDate.of(2020, 8, 30)), MCD_ID), ConstraintViolationException.class);
-        validateRootCause(() -> service.create(new Dish(null, "BestDish", 0.2, LocalDate.of(2020, 8, 30)), MCD_ID), ConstraintViolationException.class);
-        validateRootCause(() -> service.create(new Dish(null, "BestDish", 20.2, null), MCD_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Dish(null, "", 10000, LocalDate.of(2020, 8, 30)), MCD_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Dish(null, "BestDish", 0, LocalDate.of(2020, 8, 30)), MCD_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Dish(null, "BestDish", 500009, null), MCD_ID), ConstraintViolationException.class);
     }
 }

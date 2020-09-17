@@ -42,16 +42,6 @@ public class VoteRestControllerTest extends AbstractControllerTest {
     }
 
     @Test
-    void update() throws Exception {
-        VoteTo updated = getUpdatedVoteTo();
-        perform(MockMvcRequestBuilders.put(REST_URL + VOTE1_ID).contentType(MediaType.APPLICATION_JSON)
-                .content(JsonUtil.writeValue(updated)))
-                .andExpect(status().isNoContent());
-
-        VOTE_TO_MATCHER.assertMatch(VotesUtil.createTo(voteService.get(VOTE1_ID)), updated);
-    }
-
-    @Test
     void create() throws Exception {
         VoteTo newVote = getNewVoteTo();
         ResultActions action = perform(MockMvcRequestBuilders.post(REST_URL)

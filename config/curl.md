@@ -4,7 +4,7 @@
 ### Curl samples for Users 
 
 #### get All Users
-`curl --location --request GET http://localhost:8080/voting/admin/users`
+`curl --location --request GET http://localhost:8080/voting/admin/users --user admin@gmail.com:admin`
 
 #### get User 100001
 `curl --location --request GET http://localhost:8080/voting/admin/users/100001`

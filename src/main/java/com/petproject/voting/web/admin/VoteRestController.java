@@ -70,26 +70,4 @@ public class VoteRestController {
         log.info("delete vote {}", id);
         service.delete(id);
     }
-
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Vote> create(@RequestBody VoteTo voteTo) {
-        Vote vote = VotesUtil.createFromTo(voteTo);
-        checkNew(vote);
-        log.info("create {} for restaurant {}", vote, voteTo.getRestaurantId());
-
-        Vote created = service.create(vote, voteTo.getRestaurantId(), voteTo.getUserId());
-        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path(REST_URL + "/{id}")
-                .buildAndExpand(created.getId()).toUri();
-        return ResponseEntity.created(uriOfNewResource).body(created);
-    }
-
-    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@RequestBody VoteTo voteTo, @PathVariable int id) {
-        Vote vote = VotesUtil.createFromTo(voteTo);
-        assureIdConsistent(vote, id);
-        log.info("update {} for id {}", vote, id);
-        service.update(vote, voteTo.getRestaurantId(), voteTo.getUserId());
-    }
 }

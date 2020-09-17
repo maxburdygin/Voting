@@ -20,8 +20,8 @@ public class Dish extends AbstractBaseEntity {
     private String description;
 
     @Column(name = "price", nullable = false)
-    @Range(min = 1, max = 5000)
-    private Double price;
+    @Range(min = 1, max = 500000)
+    private Integer price;
 
     @Column(name = "local_date", nullable = false)
     @NotNull
@@ -36,14 +36,14 @@ public class Dish extends AbstractBaseEntity {
     public Dish() {
     }
 
-    public Dish(Integer id, String description, Double price, LocalDate localDate) {
+    public Dish(Integer id, String description, Integer price, LocalDate localDate) {
         super(id);
         this.description = description;
         this.price = price;
         this.localDate = localDate;
     }
 
-    public Dish(String description, Double price, LocalDate localDate) {
+    public Dish(String description, Integer price, LocalDate localDate) {
         this(null, description, price, localDate);
     }
 
@@ -55,11 +55,11 @@ public class Dish extends AbstractBaseEntity {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

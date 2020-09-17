@@ -33,6 +33,12 @@ public class RestaurantRestController {
         return service.getAll();
     }
 
+    @GetMapping("/today")
+    public List<Restaurant> getWithDishesForToday() {
+        log.info("getWithDishesForToday");
+        return service.getWithDishesForToday();
+    }
+
     @GetMapping("/{id}")
     public Restaurant get(@PathVariable int id) {
         log.info("get {}", id);
